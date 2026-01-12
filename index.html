@@ -1,27 +1,92 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
-
+    <title>Akuye's Sweet | QR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+    
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fdf8f5; 
+            font-family: 'Poppins', sans-serif;
+            background-image: radial-gradient(#d48c70 0.5px, transparent 0.5px); 
+            background-size: 20px 20px;
+        }
+
+        .qr-card {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 300px;
+            border: 2px solid #f1e4df;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: #4a4a4a;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+        }
+
+       
+        #qrcode {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background: #fff;
+            border-radius: 15px;
+        }
+
+        #qrcode img {
+            border: 5px solid white;
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #d48c70;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+    
 </head>
 <body>
-    <h1>Scan this QR Code for a surprise cake!</h1>
-    
-    
+
+<div class="qr-card">
+    <h3>Scan for a <br>🍰 surprise!</h3>
+        
     <div id="qrcode"></div>
+        
+    <p class="footer-text">Akuye's Sweet</p>
+</div>
+    
     
     <script>
-        // JavaScript code to generate the QR code
+        // Note: I fixed the extra space in your URL string below
         const qrcode = new QRCode(document.getElementById("qrcode"), {
-            text:" https://leuljabs22.github.io/akuyes/cakes.html",
-            width: 128,
-            height: 128,
-            colorDark: "#000000",
+            text: "https://leuljabs22.github.io/akuyes/cakes.html",
+            width: 180, 
+            height: 180,
+            colorDark: "#2d2d2d", 
             colorLight: "#ffffff",
-            correctLevel: QRCode.CorrectLevel.H // High error correction
+            correctLevel: QRCode.CorrectLevel.H 
         });
     </script>
 
